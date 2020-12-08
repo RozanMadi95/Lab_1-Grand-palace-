@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+FrameLayout هي عبارة عن نوع من انواع التخطيط
+وبتاخد عنصر واحد وعند وضع عنصر اخر ياتي فوقه عشان كده
+اعطتك امكانية توزيع العناصر في تسع أماكن هذا
+باستخدام خاصية layout_gravity
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--
+    ImageView مكون لوضع الصورة بداخله وهنا هي عبارة عن خلفية الشاشة
+    ولها مجموعة من الخصائص وهي:-
+    id هي المعرف المخصص للعنصر يستخدم عند استدعاهابرمجيا
+    width&height طول وعرض الصورة وبقيمة حسب محتوى الصورة يكون الطول والعرض
+    scaleType وهي تحكم بحجم واحتواء ومكان الصورة في الخلفية
+    src   وتظهر في تطبيق drawable يوضع فيها مسار الصورة وتكون موجودة في مجلد
+    srcCompat وتظهر في تطبيق ومعاينة drawable يوضع فيها مسار الصورة وتكون موجودة في مجلد
+
+    -->
+
+    <ImageView
+        android:id="@+id/imgv_grand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/grandpalace"
+        app:srcCompat="@drawable/grandpalace" />
+
+    <!--
+     TextView هو عنصر يتم كتابة فيه ويكون ظاهر في اغلب الاحيان وثابت
+       ولكن ممكن استخدامه برمجياوله عدة خصائص وهي :-
+    id هي المعرف المخصص للعنصر يستخدم عند استدعاهابرمجيا
+    width&height  طول وعرض النص
+    ويكون خيارات القيم ثلاثة خيارات وهي
+        wrap_content اي حسب المحتوى النص يكون الطول والعرض
+        match_parent FrameLayout ياخد الشكل والحجم بالنسبة للاب وهنا الاب عبارة عن
+       189 dp ان ياخد الطول والعرض قيم ثابتة يضعها حسب مدي المناسب وتقاس بوحدة
+    margin وهي عبارة عن مسافة وومدي ازاحة العنصر بالنسبة للاب واكتفتي
+    وتاخد عدة قيم اما من الاعى او الاسفل او اليمين واليسار او البداية او النهاية
+    padding وهي ازاحة داخلية اي المحتوى بالنسبة للعنصر الموجود فيه
+    background لون الخلفية للنص وهنا يتم تحديد الشفافية ولون بالنظام السادس عشر
+    fontFamily نوع الخط
+    text النص والمحتوي الظاهر للمستخدم على الشاشة
+    textAlignment وهي محادات النص اي من اي اتجاه يبدا النص
+    ولها عدة خيارات البداية او النهاية حسب لغة التطبيق او اليمين واليسار او المنتصف
+    textColor لون النص
+    textSize sp حجم النص ويقاس بوحدة
+     textStyle لستايل بتاع االنص ونمطه غامق مائل او غير كده
+
+     -->
+    <TextView
+        android:id="@+id/tv_titel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="60dp"
+        android:background="#F3E06442"
+        android:fontFamily="sans-serif-smallcaps"
+        android:padding="10dp"
+        android:text="Grand palace, pankok"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#F1EECC"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:background="#B5E06442"
+        android:padding="10dp"
+        android:text="22.nov.2020"
+        android:textColor="#F1EECC"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+
+</FrameLayout>
+
